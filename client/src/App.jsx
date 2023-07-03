@@ -7,11 +7,11 @@ const App = () => {
     <div className="min-h-screen">
        <div className="gradient-bg-welcome">
       <Navbar/>
-      <Exchange/>
       <Welcome/>
       </div>
       <Services/>
       <Transcactions/>
+      <Exchange/>
       <Footer/>
     </div>
   );
