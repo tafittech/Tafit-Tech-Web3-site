@@ -28,14 +28,15 @@ const Welcome = () =>{
     }
     return (
         <div className="flex w-full justify-center items-center">
-            <div className="flex mf:flex-row flew-col items-start justify-between md-p-20 py-12 px-4">
-                <div className="flex flex-1 justify-start flex-col mf:mr-10">
-                    <h1 className="text-3xl sm:text-5xl  text-white text-gradient py-1">
-                    Tafit Tech Limited<br/> Digital Center <br/><h2 className=" py-1">
-                        "digital solutions for you."
-                    </h2>
-                    </h1>
-                    <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-bases">
+           <div className="flex mf:flex-row flew-col items-start justify-between md-p-20 py-12 px-4">
+            <div className="flex flex-1 justify-start flex-col mf:mr-10">
+                <h1 className="text-3xl sm:text-5xl  text-white text-gradient py-1">
+                    Tafit Tech Limited<br/>
+                    Digital Center <br/><h2 className=" py-1">
+                    "digital solutions for you."
+                </h2>
+                </h1>
+                <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-bases">
                         Explore the Crypto world buy, sell token while enjoying more.
                     </p>
                     <button
