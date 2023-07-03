@@ -1,33 +1,79 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
-const hre = require("hardhat");
-
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
-
-  const lockedAmount = hre.ethers.parseEther("0.001");
-
-  const lock = await hre.ethers.deployContract("Lock", [unlockTime], {
-    value: lockedAmount,
+  const Transactions = await ethers.getContractFactory("Transactions");
+  const transactions = await Transactions.deploy();
+  console.log("Contract Deployed to Address:",transactions.address);
+}
+main()
+  .then(() => process.exit(0))
+  .catch(error => {
+    console.error(error);
+    process.exit(1);
   });
 
-  await lock.waitForDeployment();
 
-  console.log(
-    `Lock with ${ethers.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-  );
-}
+
+
+
+
+
+
+
+
+
+
+// async function main() {
+
+//     const [deployer] = await ethers.getSigners();
+
+//     console.log(
+//     "Deploying contracts with the account:",
+//     deployer.address
+//     );
+
+//     console.log("Account balance:", (await deployer.getBalance()).toString());
+
+//     const Transactions = await ethers.getContractFactory("Transactions");
+//     const transactions = await Transactions.deploy();
+
+//     console.log("Contract deployed at:", transactions.address);
+// }
+
+// main()
+//   .then(() => process.exit(0))
+//   .catch(error => {
+//     console.error(error);
+//     process.exit(1);
+//   });
+
+
+
+
+
+
+
+// const hre = require("hardhat");
+
+// const main = async () => {
+
+//   const Transactions  = await hre.ethers.getContractFactory("Transactions");
+//   const transactions = await Transactions.deploy();
+
+//   await transactions.deploy();
+
+//   console.log("Transactions deployed to:", transactions.address);
+// }
+
+// const runMain = async () => {
+//   try {
+//     await main();
+//     process.exitCode(0);
+//   } catch (error) {
+//     console.error(error);
+//     process.exit(1)
+//   }
+// }
+// runMain();
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+
