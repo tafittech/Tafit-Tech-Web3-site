@@ -49,7 +49,7 @@ export const TransactionProvider = ({ children }) => {
 
 
         
-        // console.log(accounts);
+         console.log(accounts);
     }
 
     const connectWallet = async () =>{
